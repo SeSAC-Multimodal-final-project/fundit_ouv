@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundit 달력</title>
+    <link rel="stylesheet" href="fundit_calendar.css">
+</head>
+
+<body>
+    <div class="box">
+        <img src="fundint.svg" alt="펀딩인트 로고" class="fundint-logo-image">
+        <a href="https://www.naver.com" class="back-image">
+            <img src="back.svg" alt="뒤로가기 버튼">
+        </a>
+
+        <!-- 정책 리스트 --> 
+        <div class="policy-box-container">
+            <div class="policy-box" data-policy-id="청년내일채움공제" data-type="여유있는 정책" data-month="3" data-start="2"
+                data-end="11">청년내일채움공제</div>
+            <div class="policy-box" data-policy-id="청년희망적금" data-type="종료된 정책" data-month="3" data-start="8"
+                data-end="17">청년희망적금</div>
+            <div class="policy-box" data-policy-id="청년주택드림" data-type="마감 임박 정책" data-month="3" data-start="15"
+                data-end="24">청년주택드림</div>
+            <div class="policy-box" data-policy-id="청년도약계좌" data-type="여유있는 정책" data-month="3" data-start="20"
+                data-end="27">청년도약계좌</div>
+        </div>
+
+        <!-- 정책 정보 설명 -->
+        <div class="policy-info">
+            <div class="relaxed"><span class="relaxed-icon"></span>&nbsp;여유있는 정책</div>
+            <div class="urgent"><span class="urgent-icon"></span>&nbsp;마감 임박 정책 확인</div>
+            <div class="ended"><span class="ended-icon"></span>&nbsp;종료된 정책</div>
+        </div>
+    </div>
+
+    <!-- 캘린더 -->
+    <div class="calendar">
+        <div class="calendar-header">
+            <span id="currentMonthYear">July 2023</span>
+            <div class="button-container">
+                <button onclick="prevMonth()">&lt;</button>
+                <button onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+
+        <!-- 캘린더 날짜 -->
+        <div class="calendar-days" id="calendarDays"></div>
+
+        <!-- 일정 막대가 들어갈 자리 -->
+        <div class="schedule-container"></div>
+    </div>
+
+    <script src="fundit_calendar.js"></script>
+</body>
+
+</html>

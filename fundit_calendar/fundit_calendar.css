@@ -1,0 +1,319 @@
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('GmarketSansTTFMedium.ttf') format('truetype'),
+        url('GmarketSansTTFMedium.woff') format('woff'),
+        url('GmarketSansTTFMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GmarketSans', sans-serif;
+    color: #00316B;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 14px;
+    }
+
+    .calendar-header span {
+        font-size: 18px;
+    }
+
+    .calendar-day,
+    .calendar-weekday {
+        font-size: 14px;
+    }
+
+    .box {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+
+    .calendar-header span {
+        font-size: 16px;
+    }
+
+    .box {
+        font-size: 12px;
+    }
+}
+
+.calendar {
+    width: 100%;
+    max-width: 75%;
+    height: auto;
+    background-color: #F4F4F4;
+    padding: 50px;
+    margin: 3% 3% 3% 3%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    align-self: flex-start;
+    position: relative;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-template-rows: repeat(auto-fit, minmax(50px, auto));
+}
+
+.calendar-day,
+.calendar-weekday {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 2.5;
+    margin: 6%;
+}
+
+#currentMonthYear {
+    font-size: 28px;
+}
+
+/* 년월 */
+
+.calendar-day.inactive {
+    color: #ccc;
+}
+
+.calendar-day.today {
+    color: #4BA6F7;
+    font-weight: bold;
+}
+
+.calendar-header button {
+    background-color: #4BA6F7;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.calendar-header span {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.calendar-header .button-container {
+    display: flex;
+    position: absolute;
+    left: 280px;
+    top: 60px;
+    transform: translateY(-50%);
+}
+
+.calendar-weekday {
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 40px;
+    ;
+}
+
+.calendar-weekday:first-child {
+    color: #F7684B;
+}
+
+.box {
+    text-align: left;
+    width: 300px;
+    height: 100vh;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* 추가: position relative 설정 */
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.policy-info {
+    font-size: 18px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 글머리기호 부분임 */
+.policy-info div {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* 간격 조절 */
+    margin-bottom: 5px;
+    $
+}
+
+.policy-info span {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.policy-info .relaxed span {
+    background-color: #4BA6F7;
+}
+
+.policy-info .urgent span {
+    background-color: #F7684B;
+}
+
+.policy-info .ended span {
+    background-color: #BBBBBB;
+}
+
+.calendar-day.multiple-lines-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-day.multiple-lines-2>div {
+    flex: 1;
+    text-align: center;
+    padding: 3px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 3;
+    margin: 5px;
+}
+
+.policy-box-container {
+    margin-top: 30px;
+    /* 원하는 간격 설정 */
+}
+
+.policy-box {
+    background-color: white;
+    width: 240px;
+    height: 70px;
+    border-radius: 15px;
+    margin: 10px auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    color: #333;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.fundint-logo-image {
+    width: 130px;
+    height: 50px;
+}
+
+.back-image {
+    width: 10%;
+    height: 5%;
+    margin-top: -40px;
+    padding-left: 230px;
+    color: inherit;
+    /* 텍스트 색상 상속 */
+}
+
+.policy-box-container .policy-box[data-type="여유있는 정책"] {
+    color: #4BA6F7;
+}
+
+.policy-box-container .policy-box[data-type="마감 임박 정책"] {
+    color: #F7684B;
+}
+
+.policy-box-container .policy-box[data-type="종료된 정책"] {
+    color: #BBBBBB;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    display: none;
+    /* 기본은 보이지 않게 설정 */
+    z-index: 10;
+}
+
+.calendar-day:hover .tooltip {
+    display: block;
+    /* hover 시 툴팁 보이기 */
+}
+
+.calendar-day {
+    position: relative;
+    /* 툴팁을 기준으로 위치 잡기 */
+}
+
+.tooltip {
+    position: absolute;
+    top: -30px;
+    /* 툴팁을 위쪽에 위치 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    display: none;
+    /* 기본적으로 숨기기 */
+}
+
+.calendar-day.policy-relaxed {
+    background-color: rgba(75, 166, 247, 0.3);
+}
+
+.calendar-day.policy-urgent {
+    background-color: rgba(247, 104, 75, 0.3);
+}
+
+.calendar-day.policy-ended {
+    background-color: rgba(187, 187, 187, 0.3);
+}
